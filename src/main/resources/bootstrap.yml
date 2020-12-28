@@ -1,0 +1,19 @@
+server:
+  port: 9023
+
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: akb-wechat-robot
+  cloud:
+    nacos:
+      discovery:
+         server-addr: 10.100.1.29:8848
+        #server-addr: 172.18.0.158:80
+      config:
+        file-extension: yaml
+        refresh-enabled: true
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        namespace: 8c30c80a-0644-415e-ab05-44696fd5378b
